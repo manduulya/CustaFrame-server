@@ -7,7 +7,7 @@ const { NODE_ENV } = require("./config");
 const app = express();
 const errorHandler = require("./error-handler");
 const dummyStore = require("./dummy-store");
-const morganOption = NODE_ENV === "production";
+const morganOption = NODE_ENV === "production" ? "tiny" : "common";
 const path = require("path");
 
 app.use(morgan(morganOption));
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
 
-app.use("/assets", express.static(path.join(__dirname, "assets")));
+app.use("/api/assets", express.static(path.join(__dirname, "assets")));
 
 app.use(errorHandler);
 module.exports = app;
