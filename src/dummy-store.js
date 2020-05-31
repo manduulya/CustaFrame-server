@@ -25,7 +25,7 @@ module.exports = {
       id: 4,
       name: "frame004",
       urlName: "frame4",
-      dispImage: "/frameI3mages/frame004.png",
+      dispImage: "/frameImages/frame004.png",
       pricePerMeter: 1.2,
     },
     {
