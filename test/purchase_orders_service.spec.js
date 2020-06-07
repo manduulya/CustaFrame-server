@@ -1,5 +1,6 @@
 const purchase_orders_service = require("../src/purchase_orders/purchase_orders_service");
 const knex = require("knex");
+const app = require("../src/app");
 
 describe(`Purchase orders service object`, function () {
   let db;
@@ -29,17 +30,13 @@ describe(`Purchase orders service object`, function () {
 
   before(() => db("custaframe_purchase_order").truncate());
 
+  after("disconnect from db", () => db.destroy());
+  before("clean the table", () => db("custaframe_purchase_order").truncate());
+  afterEach("cleanup", () => db("custaframe_purchase_order").truncate());
+
   before(() => {
     return db.into("custaframe_purchase_order").insert(testPO);
   });
-
-  after("disconnect from db", () => db.destroy());
-  before("clean the table", () =>
-    db.raw("TRUNCATE notes, folders RESTART IDENTITY CASCADE")
-  );
-  afterEach("cleanup", () =>
-    db.raw("TRUNCATE notes, folders RESTART IDENTITY CASCADE")
-  );
 
   describe(`GET /api/pos`, () => {
     it("resolves all articles from custaframe_purchase_order table", () => {

@@ -7,8 +7,8 @@ CREATE TABLE custaframe_purchase_order(
     customers_file TEXT,
     date TIMESTAMPTZ DEFAULT now() NOT NULL,
     frame_name TEXT NOT NULL,
-    width INTEGER NOT NULL,
-    height INTEGER NOT NULL,
+    width REAL NOT NULL,
+    height REAL NOT NULL,
     note TEXT,
-    total_price INTEGER
+    total_price REAL
 )
