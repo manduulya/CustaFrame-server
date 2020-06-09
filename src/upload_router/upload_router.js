@@ -6,8 +6,8 @@ const multerS3 = require("multer-s3");
 const uploadRouter = express.Router();
 
 const s3 = new aws.S3({
-  accessKeyId: "AKIA2Z4N3MYCKG2FSRFQ",
-  secretAccessKey: "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",
+  accessKeyId: "AKIA2Z4N3MYCLDKCUANE",
+  secretAccessKey: "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",
   Bucket: "custaframe",
 });
 

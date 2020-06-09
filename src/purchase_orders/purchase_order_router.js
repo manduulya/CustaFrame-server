@@ -36,6 +36,7 @@ poRouter
     const {
       customer_name,
       email,
+      customers_file,
       frame_name,
       width,
       height,
@@ -45,6 +46,7 @@ poRouter
     const newPO = {
       customer_name,
       email,
+      customers_file,
       frame_name,
       width,
       height,
