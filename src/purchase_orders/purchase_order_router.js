@@ -17,9 +17,10 @@ serializePo = (po) => ({
   note: xss(po.note),
   total_price: po.total_price,
 });
-
+//router
 poRouter
   .route("/")
+  //get request
   .get((req, res, next) => {
     const knexInstance = req.app.get("db");
     purchase_orders_service
@@ -29,12 +30,12 @@ poRouter
       })
       .catch(next);
   })
+  //post request
   .post(bodyParser, (req, res, next) => {
     const knexInstance = req.app.get("db");
     const {
       customer_name,
       email,
-      customers_file,
       frame_name,
       width,
       height,
@@ -44,14 +45,13 @@ poRouter
     const newPO = {
       customer_name,
       email,
-      /*customers_file,*/
       frame_name,
       width,
       height,
       note,
       total_price,
     };
-
+    //post request validation
     if (!width) {
       return res.status(400).json({
         error: { message: `Missing width in request body` },
@@ -83,4 +83,5 @@ poRouter
       })
       .catch(next);
   });
+
 module.exports = poRouter;

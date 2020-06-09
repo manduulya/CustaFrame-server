@@ -10,12 +10,14 @@ const dummyStore = require("./dummy-store");
 const morganOption = NODE_ENV === "production" ? "tiny" : "common";
 const path = require("path");
 const poRouter = require("./purchase_orders/purchase_order_router");
+const uploadRouter = require("./upload_router/upload_router");
 
 app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
 app.use("/api/po", poRouter);
+app.use("/api/upload", uploadRouter);
 
 app.get("/api/frames", (req, res) => {
   res.send(dummyStore);
