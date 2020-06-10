@@ -1,15 +1,18 @@
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const uploadRouter = express.Router();
+const { accessKeyId, secretAccessKey, Bucket } = require("../config");
 
 const s3 = new aws.S3({
-  accessKeyId: "AKIA2Z4N3MYCLDKCUANE",
-  secretAccessKey: "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",
-  Bucket: "custaframe",
+  accessKeyId: accessKeyId,
+  secretAccessKey: secretAccessKey,
+  Bucket: Bucket,
 });
+console.log(accessKeyId);
 
 const userImgUpload = multer({
   storage: multerS3({
