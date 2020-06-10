@@ -12,7 +12,6 @@ const s3 = new aws.S3({
   secretAccessKey: secretAccessKey,
   Bucket: Bucket,
 });
-console.log(accessKeyId);
 
 const userImgUpload = multer({
   storage: multerS3({
@@ -51,15 +50,11 @@ function checkFileType(file, cb) {
 }
 uploadRouter.post("/", (req, res) => {
   userImgUpload(req, res, (error) => {
-    // console.log( 'requestOkokok', req.file );
-    // console.log( 'error', error );
     if (error) {
-      console.log("errors", error);
       res.json({ error: error }).status(400);
     } else {
       // If File not found
       if (req.file === undefined) {
-        console.log("Error: No File Selected!");
         res.json("Error: No File Selected").status(404);
       } else {
         // If Success
