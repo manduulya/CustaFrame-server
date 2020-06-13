@@ -16,7 +16,7 @@ const s3 = new aws.S3({
 const userImgUpload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: "custaframe",
+    bucket: "custaframeusersimages",
     acl: "public-read",
     key: function (req, file, cb) {
       cb(

@@ -1,28 +1,54 @@
-# Express Boilerplate!
+# CustaFrame app
 
-This is a boilerplate project used for starting new projects!
+This web app allows you to see how your art-work will look on specific frame, before commiting any physical purchase. Therefore, you may make the best choice!
 
-## Set up
+Contains functions to enable CRUD operations for client side application. Deployed with Heroku
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+## LINK TO LIVE APP
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. npm i express morgan cors dotenv helmet
-6. npm i mocha chai supertest nodemon -D
-7. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-8. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+```
+https://custaframe-client.manduulya.now.sh/
+```
 
-## Scripts
+## TECHNOLOGIES USED
 
-Start the application `npm start`
+- Node
+- Express Framework
+- Chai
+- Mocha
+- Knex
 
-Start nodemon for the application `npm run dev`
+### FUNCTIONALITY
 
-Run the tests `npm test`
+The app uses GET requests to the stock images of frame selections from static served files to the client.
+The app uses POST requests get sent to the database for:
 
-## Deploying
+### Adding purchase order with following keys:
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+fullname: { type: String, required: true },
+width: {type: Integer, required: true},
+height: {type: Integer, required: true},
+email: {type: text, required: true},
+frameName: {type: text, required: true},
+totalPrice: {type: Integer, required: true}
+
+## API Overview
+
+### Events GET
+
+@route GET api/frames/ @desc Gets all frame options @access Public
+route.get('/');
+
+@route POST api/po/ @desc Allows users to place an order @access Public
+route.post('/');
+
+### SCREENSHOT
+
+1. Landing Page
+   logo
+
+2.Upload Page
+logo
+
+3.Exit Page
+logo
