@@ -1,4 +1,4 @@
-CustaFrame app
+###CustaFrame app
 This web app allows you to see how your art-work will look on specific frame, before commiting any physical purchase. Therefore, you may make the best choice!
 
 Contains functions to enable CRUD operations for client side application. Deployed with Heroku
