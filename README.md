@@ -20,6 +20,7 @@ https://custaframe-client.manduulya.now.sh/
 
 ### FUNCTIONALITY
 
+The app uses AWS S3 storage for users to upload their image to create a purchase order
 The app uses GET requests to the stock images of frame selections from static served files to the client.
 The app uses POST requests get sent to the database for:
 
