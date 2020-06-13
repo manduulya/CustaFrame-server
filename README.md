@@ -48,8 +48,8 @@ route.post('/');
 1. Landing Page
    logo
 
-2.Upload Page
-logo
+2. Upload Page
+   logo
 
-3.Exit Page
-logo
+3. Exit Page
+   logo
