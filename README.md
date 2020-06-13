@@ -1,14 +1,13 @@
 # CustaFrame app
-````
+
 This web app allows you to see how your art-work will look on specific frame, before commiting any physical purchase. Therefore, you may make the best choice!
 
 Contains functions to enable CRUD operations for client side application. Deployed with Heroku
 
 ## LINK TO LIVE APP
-````
 https://custaframe-client.manduulya.now.sh/
 
-TECHNOLOGIES USED
+## TECHNOLOGIES USED
 Node
 Express Framework
 Chai
@@ -27,8 +26,8 @@ email: {type: text, required: true},
 frameName: {type: text, required: true},
 totalPrice: {type: Integer, required: true}
 
-API Overview
-Events GET
+## API Overview
+### Events GET
 
 @route GET api/frames/ @desc Gets all frame options @access Public
 route.get('/');
@@ -38,7 +37,7 @@ route.get('/');
 route.post('/');
 
 
-SCREENSHOT
+### SCREENSHOT
 1. Landing Page
 logo
 
