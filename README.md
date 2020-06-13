@@ -5,19 +5,22 @@ This web app allows you to see how your art-work will look on specific frame, be
 Contains functions to enable CRUD operations for client side application. Deployed with Heroku
 
 ## LINK TO LIVE APP
+````
 https://custaframe-client.manduulya.now.sh/
+````
 
 ## TECHNOLOGIES USED
-Node
-Express Framework
-Chai
-Mocha
-Knex
-FUNCTIONALITY
+* Node
+* Express Framework
+* Chai
+* Mocha
+* Knex
+
+### FUNCTIONALITY
 The app uses GET requests to the stock images of frame selections from static served files to the client. 
 The app uses POST requests get sent to the database for:
 
-Adding purchase order with following keys: 
+### Adding purchase order with following keys: 
 
 fullname: { type: String, required: true }, 
 width: {type: Integer, required: true},
